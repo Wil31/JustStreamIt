@@ -1,0 +1,19 @@
+{
+  "name": "juststreamit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script_best_films.js",
+  "scripts": {
+    "sass": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wil31/JustStreamIt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wil31/JustStreamIt/issues"
+  },
+  "homepage": "https://github.com/Wil31/JustStreamIt#readme"
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/.sass/main.css" />
+        <title>JustStreamIt</title>
+    </head>
+
+    <body>
+        <script src="./script_best_films.js"></script>
+        <header class="header">
+            <h1 class="header__title">JustStreamIt</h1>
+            <nav>
+                <ul class="header__nav">
+                    <li class="header__category"><a href="#">Accueil</a></li>
+                    <li class="header__category"><a href="#caroussel__top-films">Catégoties</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="top-film-block">
+            <div id="top-film">
+                <div id="top-film__image"></div>
+                <p id="top-film__info"></p>
+            </div>
+            <button type="button" class="button button__open-modal">Infos</button>
+        </section>
+
+        <h2>Films les mieux notés</h2>
+        <div id="caroussel__top-films" class="caroussel">
+            <button type="button" class="button button__previous"><<</button>
+            <div id="gallery__top-films">
+                <ul class="images__top-films"></ul>
+            </div>
+            <button type="button" class="button button__next">>></button>
+        </div>
+
+        <h2>Films Animations</h2>
+        <div id="caroussel__animation" class="caroussel">
+            <button type="button" class="button button__previous"><<</button>
+            <div id="galery__animation">
+                <ul class="images__animation"></ul>
+            </div>
+            <button type="button" class="button button__next">>></button>
+        </div>
+
+        <h2>Films Aventure</h2>
+        <div id="caroussel__adventure" class="caroussel">
+            <button type="button" class="button button__previous"><<</button>
+            <div id="galery__adventure">
+                <ul class="images__adventure"></ul>
+            </div>
+            <button type="button" class="button button__next">>></button>
+        </div>
+
+        <h2>Films Fantasy</h2>
+        <div id="caroussel__fantasy" class="caroussel">
+            <button type="button" class="button button__previous"><<</button>
+            <div id="galery__fantasy">
+                <ul class="images__fantasy"></ul>
+            </div>
+            <button type="button" class="button button__next">>></button>
+        </div>
+
+        <!-- ? A voir pour la boite modale -->
+        <div id="modal-box" class="modal">
+            <div class="modal__details">
+
+                <div class="modal__image"></div>
+                <h1>Détails du film</h1>
+                <ul class="modal__film-details"></ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>JustStreamIt<br />
+        </footer>
+
+    </body>
+</html>
