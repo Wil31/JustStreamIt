@@ -27,7 +27,7 @@ const displayTopRatedFilm = (url) => {
     .then(function(value) {
         let topFilmImage = document.getElementById("top-film__image");
         topFilmImage.innerHTML = "<p><img src=" + value.image_url + " ></p>";
-        topFilmImage.setAttribute("data-id", value.id);
+        topFilmImage.setAttribute("id", value.id);
 
         let topFilmInfo = document.getElementById("top-film__info");
         let topFilmTitle = document.createElement("h1");
@@ -40,7 +40,7 @@ const displayTopRatedFilm = (url) => {
 
         let button_infos = document.getElementsByClassName("button__open-modal");
         button_infos[0].addEventListener("click", function() {
-            displayModalBox(topFilmImage.dataset.id);
+            displayModalBox(topFilmImage.id);
         });
     })
     .catch(function(err) {
@@ -70,36 +70,36 @@ const getFilmsList = (urlEnd ,target , nombreFilms) => {
 
 const displayFilmsList = (data, target, nombreFilms) => {
     for (let i = 0; i < nombreFilms; i++) {
-        let caroussel__container = document.getElementsByClassName(target)[0];
-        let movie_image_element = document.createElement("li");
+        let carousselContainer = document.getElementsByClassName(target)[0];
+        let film_cover = document.createElement("li");
 
-        movie_image_element.innerHTML = "<p><img src=" +  data.results[i].image_url + "></p>";
-        movie_image_element.setAttribute("class", "imgPreview");
+        film_cover.innerHTML = "<p><img src=" +  data.results[i].image_url + "></p>";
+        film_cover.setAttribute("class", "imgPreview");
 
-        movie_image_element.setAttribute("data-id", data.results[i].id);
+        film_cover.setAttribute("id", data.results[i].id);
 
-        caroussel__container.appendChild(movie_image_element);
+        carousselContainer.appendChild(film_cover);
 
-        movie_image_element.addEventListener("click", function() {
-            displayModalBox(movie_image_element.dataset.id)
+        film_cover.addEventListener("click", function() {
+            displayModalBox(film_cover.id)
         });
 
         let carrousel = document.getElementsByClassName(target)[0].childNodes;
         carrousel.forEach(function (currentValue, currentIndex) {
-			currentValue.setAttribute("data-carousselPlace", currentIndex)
+			currentValue.setAttribute("carousselPlace", currentIndex)
 
-			if (currentIndex < 4) {
-				currentValue.style.display = "block"
+			if (currentIndex < 5) {
+				currentValue.style.display = "block";
 			} else {
-				currentValue.style.display = "none"
+				currentValue.style.display = "none";
 			}
 		});
     }
 }
 
 
-var buttonsNext = document.getElementsByClassName('button__next')
-var buttonsPrevious = document.getElementsByClassName('button__previous')
+const buttonsNext = document.getElementsByClassName("button__next")
+const buttonsPrevious = document.getElementsByClassName("button__previous")
 
 for(var i=0; i < buttonsNext.length; i++){
 	buttonsNext[i].addEventListener('click', function() {
@@ -115,7 +115,7 @@ const move_next = (buttons_next) => {
 	let divCarrousel = divParent.getElementsByTagName('div')[0]
 	let figures = divParent.getElementsByClassName('imgPreview')
 	for(var i = 0; i < figures.length; i++){
-		figures[i].dataset['carousselplace'] = (figures[i].dataset['carousselplace'] + 6 ) % 7
+		figures[i].carousselplace = (figures[i].carousselplace + 6 ) % 7
 	}
 	refreshCarrousel(divCarrousel)
 }
@@ -125,7 +125,7 @@ const move_previous = (buttons_previous) => {
 	let divCarrousel = divParent.getElementsByTagName('div')[0]
 	let figures = divParent.getElementsByClassName('imgPreview')
 	for(var i = 0; i < figures.length; i++){
-		figures[i].dataset['carousselplace'] = (figures[i].dataset['carousselplace'] + 1) % 7
+		figures[i].carousselplace = (figures[i].carousselplace + 1) % 7
 	}
 	refreshCarrousel(divCarrousel)
 }
@@ -133,10 +133,10 @@ const move_previous = (buttons_previous) => {
 const refreshCarrousel = (carrousel) => {
 	figures = carrousel.getElementsByClassName('imgPreview')
 	for(var i = 0; i < figures.length; i++){
-		if(figures[i].dataset['carousselplace'] < 4){
-			figures[i].style.display = "block"
+		if(figures[i].carousselplace < 4){
+			figures[i].style.display = "block";
 		} else {
-			figures[i].style.display = "none"
+			figures[i].style.display = "none";
 		}
 	}
 }
@@ -156,7 +156,7 @@ const displayModalBox = (filmId) => {
         .then(function(data) {
             let modalImage = document.getElementsByClassName("modal__image")[0];
             modalImage.innerHTML = "<p><img src=" + data.image_url + "></p>";
-            let modalDetails = document.getElementsByClassName("modal__details");
+            let modalDetails = document.getElementsByClassName("modal__film-details");
 
             let title = document.createElement("li");
             title.innerHTML = "<em>Titre : </em>" + data.title;
