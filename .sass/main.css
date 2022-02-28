@@ -71,10 +71,10 @@ a:visited {
 
 .button {
   border-radius: 30px;
+  border: none;
   height: 35px;
-  font-family: Arial, Verdana, sans-serif;
   font-weight: bold;
-  color: black;
+  cursor: pointer;
 }
 
 .button__previous {
@@ -154,6 +154,7 @@ a:visited {
           transform: scale(1.2);
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  cursor: pointer;
 }
 
 .modal {
@@ -186,5 +187,24 @@ a:visited {
 
 em {
   font-weight: bold;
+}
+
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover {
+  color: grey;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close:focus {
+  color: grey;
+  text-decoration: none;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
