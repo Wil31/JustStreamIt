@@ -2,7 +2,7 @@
   "name": "juststreamit",
   "version": "1.0.0",
   "description": "",
-  "main": "script_best_films.js",
+  "main": "script.js",
   "scripts": {
     "sass": ""
   },

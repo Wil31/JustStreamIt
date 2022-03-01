@@ -7,11 +7,15 @@ $font : Arial, Verdana, sans-serif;
 body {
     background: $background-site-color;
     color: $text-color;
+    max-width: 1400px;
+    align-items: center;
+    margin: auto;
 }
 
 h2 {
     font-family: $font;
     font-size: 1.8rem;
+    margin-left: 80px;
 }
 
 li {
@@ -32,6 +36,7 @@ a {
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 15px;
+    flex-wrap: wrap;
 
     &__title {
         color: $main-title-color;
@@ -57,7 +62,7 @@ a {
     font-family: $font;  
     color: $text-color;
     height:  15%;
-    width: 500px;
+    max-width: 500px;
     text-align: center;
     align-items: center;
     margin: auto;
@@ -70,13 +75,20 @@ a {
     height: 35px;
     font-weight: bold;
     cursor: pointer;
+    background-color: $main-title-color;
+    color: $text-color;
 
     &__previous {
         margin-top: 140px;
+        margin-left: 15px;
+        font-size: larger;
     }
 
     &__next {
         margin-top: 140px;
+        margin-right: 15px;
+        margin-left: 15px;
+        font-size: larger;
     }
 }
 
@@ -95,36 +107,19 @@ a {
     }
 }
 
-#caroussel {
-    &__top-films {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    &__animation {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    &__adventure {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    &__fantasy {
-        display: flex;
-        justify-content: space-around;
-    }
+.caroussel {
+    display: flex;
+    
 }
 
-#gallery {
-    &__top-films {
-        display: flex;
-        justify-content: space-around;
-    }
+.gallery {
+    display: flex;
+    width: auto;
+    overflow: hidden;
 }
 
 .imgPreview {
+    
     &:hover {
         transform:scale(1.2);
         transition: 0.4s;
