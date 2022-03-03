@@ -19,11 +19,12 @@ li {
 }
 
 a {
-  color: white;
+  text-decoration: none;
 }
 
 a:visited {
-  color: white;
+  color: inherit;
+  text-decoration: none;
 }
 
 .header {
@@ -90,14 +91,16 @@ a:visited {
 .button__previous {
   margin-top: 140px;
   margin-left: 15px;
-  font-size: larger;
+  font-size: small;
+  font-weight: lighter;
 }
 
 .button__next {
   margin-top: 140px;
   margin-right: 15px;
   margin-left: 15px;
-  font-size: larger;
+  font-size: small;
+  font-weight: lighter;
 }
 
 .images__top-films {

@@ -23,10 +23,10 @@ li {
 }
 
 a {
-    color: $text-color;
-
+    text-decoration: none;
     &:visited {
-        color: $text-color;
+        color: inherit;
+        text-decoration: none;
     }
 }
 
@@ -81,14 +81,16 @@ a {
     &__previous {
         margin-top: 140px;
         margin-left: 15px;
-        font-size: larger;
+        font-size: small;
+        font-weight: lighter;
     }
 
     &__next {
         margin-top: 140px;
         margin-right: 15px;
         margin-left: 15px;
-        font-size: larger;
+        font-size: small;
+        font-weight: lighter;
     }
 }
 
