@@ -15,6 +15,9 @@ const getTopFilm = (endUrl) => {
             let topRatedFilmUrl = value["results"][0]["url"];
             displayTopRatedFilm(topRatedFilmUrl);
         })
+        .catch(function (err) {
+            console.error('Error:', err);
+        })
 }
 
 const displayTopRatedFilm = (url) => {
@@ -83,17 +86,6 @@ const displayFilmsList = (data, target, nombreFilms) => {
         film_cover.addEventListener("click", () => {
             displayModalBox(film_cover.id)
         });
-
-        /* let carrousel = document.getElementsByClassName(target)[0].childNodes;
-        carrousel.forEach((currentValue, currentIndex) => {
-            currentValue.setAttribute("data-carousselPlace", currentIndex)
-
-            if (currentIndex < 4) {
-                currentValue.style.display = "block";
-            } else {
-                currentValue.style.display = "none";
-            }
-        }); */
     }
 }
 
